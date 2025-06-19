@@ -99,6 +99,25 @@ class LinuxTreeView(TreeView):
         return "Expanding Linux-style TreeView"
 
 
+# conc products ANDROID
+class AndroidButton(Button):
+    def render(self) -> str:
+        return "Rendering Android-style Button"
+
+
+class AndroidCheckbox(Checkbox):
+    def check(self) -> str:
+        return "Checking Android-style Checkbox"
+
+    def interact_with(self, button: Button) -> str:
+        return f"Android Checkbox interacting with ({button.render()})"
+
+
+class AndroidTreeView(TreeView):
+    def expand(self) -> str:
+        return "Expanding Android-style TreeView"
+
+
 
 # conc factories
 class WindowsFactory(GUIAbstractFactory):
@@ -132,3 +151,13 @@ class LinuxFactory(GUIAbstractFactory):
 
     def create_treeview(self) -> TreeView:
         return LinuxTreeView()
+
+class AndroidFactory(GUIAbstractFactory):
+    def create_button(self) -> Button:
+        return AndroidButton()
+
+    def create_checkbox(self) -> Checkbox:
+        return AndroidCheckbox()
+
+    def create_treeview(self) -> TreeView:
+        return AndroidTreeView()

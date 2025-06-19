@@ -1,4 +1,4 @@
-from abstract_factory import WindowsFactory, MacFactory, LinuxFactory, GUIAbstractFactory
+from abstract_factory import WindowsFactory, MacFactory, LinuxFactory, AndroidFactory, GUIAbstractFactory
 
 def client_app(factory: GUIAbstractFactory) -> None:
     button = factory.create_button()
@@ -20,3 +20,6 @@ if __name__ == "__main__":
 
     print("\n===============================\nClient: Linux GUI\n===============================")
     client_app(LinuxFactory())
+
+    print("\n===============================\nClient: Android GUI\n===============================")
+    client_app(AndroidFactory())

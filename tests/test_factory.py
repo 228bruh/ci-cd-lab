@@ -1,5 +1,5 @@
 import pytest
-from abstract_factory import WindowsFactory, MacFactory, LinuxFactory
+from abstract_factory import WindowsFactory, MacFactory, LinuxFactory, AndroidFactory
 from abstract_factory import Button, Checkbox, TreeView
 
 
@@ -7,6 +7,7 @@ from abstract_factory import Button, Checkbox, TreeView
     (WindowsFactory, "Rendering Windows-style Button", "Checking Windows-style Checkbox", "Expanding Windows-style TreeView"),
     (MacFactory, "Rendering MacOS-style Button", "Checking MacOS-style Checkbox", "Expanding MacOS-style TreeView"),
     (LinuxFactory, "Rendering Linux-style Button", "Checking Linux-style Checkbox", "Expanding Linux-style TreeView"),
+    (AndroidFactory, "Rendering Android-style Button", "Checking Android-style Checkbox", "Expanding Android-style TreeView")
 ])
 def test_gui_elements(factoryClass, expectedButton, expectedCheckbox, expectedTreeview):
     factory = factoryClass()
@@ -34,6 +35,7 @@ def test_factory_instance_types():
     (WindowsFactory, "Rendering Windows-style Button"),
     (MacFactory, "Rendering MacOS-style Button"),
     (LinuxFactory, "Rendering Linux-style Button"),
+    (AndroidFactory, "Rendering Android-style Button")
 ])
 def test_checkbox_interaction_across_platforms(factoryClass, expectedButtonText):
     factory = factoryClass()
