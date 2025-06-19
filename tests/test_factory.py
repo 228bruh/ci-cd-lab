@@ -47,3 +47,6 @@ def test_checkbox_interaction_across_platforms(factoryClass, expectedButtonText)
     assert expectedButtonText in interaction
     assert interaction.endswith(f"({expectedButtonText})")
 
+
+def test_failing_temp_test():
+    assert False, "Test supposed to fail for demo" # temp test, rm next time
